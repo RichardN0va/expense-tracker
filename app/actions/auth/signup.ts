@@ -30,7 +30,7 @@ export const signUp = async (formData: SignUpSchema) => {
             data: {
                 name: validatedFields.data.name,
                 email: validatedFields.data.email,
-                hashedPassword: hashedPassword
+                password: hashedPassword
             },
         })
         return { success: 'User created successfully!' }
