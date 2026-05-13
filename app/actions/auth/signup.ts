@@ -34,7 +34,8 @@ export const signUp = async (formData: SignUpSchema) => {
             },
         })
         return { success: 'User created successfully!' }
-    } catch {
+    } catch (error) {
+        console.error(error)
         return { error: `Sign up failed` }
     }
 }

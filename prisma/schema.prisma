@@ -1,8 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
@@ -17,8 +12,8 @@ model User {
   name      String
   email     String     @unique
   password  String
-  expenses  Expenses[]
   createdAt DateTime   @default(now())
+  expenses  Expenses[]
 }
 
 model Expenses {
@@ -28,6 +23,6 @@ model Expenses {
   category  String
   date      DateTime @default(now())
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
 }
